@@ -1,7 +1,7 @@
 # Detecting attacks leveraging vulnerability fixed in MS17-010 from Event Log
 
-This is a detection tool for detecting attack  leveraging vulnerability fixed in MS17-010 from Event Log.
-The tool is implemented by Java, and tested in Java 1.8 
+This is a detection tool for detecting attack  leveraging vulnerability fixed in MS17-010 from Event Log.<br>
+The tool is implemented by Java, and tested in Java 1.8.
 
 ## How to use
 1. Export Event Log (Security) as CSV file using the standard function of Event viewer<br/>
@@ -10,6 +10,8 @@ The tool is implemented by Java, and tested in Java 1.8
 Usage: java logparse/DetectEternalblueDoublepulsar2008 [inputdirname] [outputdirname]<br/>
   inputdirname: full path of the directory in which Event Logs are put<br/>
   outputdirname: full path of the directory in which detection result is put<br/>
+The tool is provided as Eclipse format, so you can also execute the tool  on Eclipse.
+  
 Example of useage:<br/>
 $ cd doublepalserdetection/tools/LogParserForDoublePalser/bin<br/>
 $ java logparse/DetectEternalblueDoublepulsar2008 /tmp/input /tmp/output<br/>
