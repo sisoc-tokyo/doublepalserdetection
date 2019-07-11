@@ -1,5 +1,5 @@
-import parse_csv_jp
-#import parse_csv
+#import parse_csv_jp
+import parse_csv
 import os,sys,csv
 
 LOGFILE="err.log"
@@ -17,9 +17,10 @@ try:
         writer = csv.writer(f)
         writer.writerow(
             ["datetime", "eventid", "accountname", "clientaddr", "servicename", "processname", "objectname",
-             "sharedname", "result"])
+             "sharedname", "result","file"])
 
-    parse_csv_jp.read_csv(sys.argv[1])
+    #parse_csv_jp.read_csv(sys.argv[1])
+    parse_csv.read_csv(sys.argv[1])
 
 except Exception as e:
     file.write(str(e))

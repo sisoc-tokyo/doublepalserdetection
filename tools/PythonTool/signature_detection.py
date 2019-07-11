@@ -312,6 +312,14 @@ class SignatureDetector:
                                                 (SignatureDetector.df.processname.str.endswith(SignatureDetector.RUNDLL))
                                              ))
                                         )]
+        # Check whether admin share is used
+        if(SignatureDetector.isAdminshare(inputLog)):
+            logs = SignatureDetector.df[(SignatureDetector.df.securityid == SignatureDetector.SYSTEM)
+                                        & (
+                                            ((SignatureDetector.df.processname.str.endswith(SignatureDetector.CMD) |
+                                                (SignatureDetector.df.processname.str.endswith(SignatureDetector.RUNDLL))
+                                             ))
+                                        )]
 
         if ((logs is not None) and len(logs) > 0):
             now = dateutil.parser.parse(inputLog.get_datetime())
@@ -319,7 +327,7 @@ class SignatureDetector:
             last_date = dateutil.parser.parse(logs.tail(1).datetime.str.cat())
             last_date = timezone('UTC').localize(last_date)
             diff = (last_date -now ).total_seconds()
-            if (diff < 10):
+            if (diff <= 60):
                 print("Signature E(EternalBlue): " + SignatureDetector.RESULT_ROMANCE)
                 return SignatureDetector.RESULT_ROMANCE
 

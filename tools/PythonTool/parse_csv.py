@@ -9,7 +9,7 @@ import InputLog
 import pandas as pd
 
 RESULT_FILE='result.csv'
-DOMAIN_NAME='example.local'
+DOMAIN_NAME='example2.local'
 MODE_ML='ml'
 MODE_WHITE='whitelist'
 TARGET_EVT=[SignatureDetector.EVENT_TGT,SignatureDetector.EVENT_ST,SignatureDetector.EVENT_PRIV,SignatureDetector.EVENT_PROCESS,
@@ -26,10 +26,10 @@ TARGET_EVT=[SignatureDetector.EVENT_TGT,SignatureDetector.EVENT_ST,SignatureDete
 
 mode=MODE_WHITE
 
-logfile="err.log"
+LOGFILE="err.log"
 file=None
 
-def preds(row):
+def preds(row,file):
     global logfile
     try:
         datetime = row[1]
@@ -45,49 +45,49 @@ def preds(row):
         securityid=""
         if (eventid in TARGET_EVT):
             if eventid == SignatureDetector.EVENT_NTLM:
-                item_account = [s for s in item if 'ログオン アカウント' in s]
+                item_account = [s for s in item if 'Logon Account' in s]
                 org_accountname = item_account[0].split(":")[1]
             else:
-                item_account = [s for s in item if 'アカウント名' in s]
+                item_account = [s for s in item if 'Account Name' in s]
                 org_accountname = item_account[0].split(":")[1]
             if eventid == SignatureDetector.EVENT_LOGIN:
                 org_accountname = item_account[1].split(":")[1]
 
             item_clientaddr=""
-            item_clientaddr = [s for s in item if 'ソース アドレス' in s]
+            item_clientaddr = [s for s in item if 'Source Address' in s]
             if len(item_clientaddr) == 0:
-                item_clientaddr = [s for s in item if 'クライアント アドレス' in s]
+                item_clientaddr = [s for s in item if 'Client Address' in s]
             if len(item_clientaddr) == 0:
-                item_clientaddr = [s for s in item if 'ソース ネットワーク アドレス' in s]
+                item_clientaddr = [s for s in item if 'Source Network Address' in s]
             if len(item_clientaddr) == 0:
-                item_clientaddr = [s for s in item if 'ソース ワークステーション' in s]
+                item_clientaddr = [s for s in item if 'Source Workstation' in s]
             if(len(item_clientaddr)>=1):
                 clientaddr = item_clientaddr[0].split(":")[1]
 
             item_service=""
-            item_service = [s for s in item if 'サービス名' in s]
+            item_service = [s for s in item if 'Service Name' in s]
             if(len(item_service)>=2):
                 servicename = item_service[0].split(":")[1]
 
             item_process = ""
-            item_process = [s for s in item if 'プロセス名' in s]
+            item_process = [s for s in item if 'Process Name' in s]
             if (len(item_process) >= 2):
-                processname = item_process[0].split("新しいプロセス名:")[1]
+                processname = item_process[0].split("New Process Name:")[1]
             elif (len(item_process) >=1):
-                processname = item_process[0].split("プロセス名:")[1]
+                processname = item_process[0].split("Process Name:")[1]
 
             item_obj = ""
-            item_obj = [s for s in item if 'オブジェクト名' in s]
+            item_obj = [s for s in item if 'Object Name' in s]
             if (len(item_obj) >= 2):
                 objectname = item_obj[0].split(":")[1]
 
             item_id = ""
-            item_id = [s for s in item if 'セキュリティ ID' in s]
+            item_id = [s for s in item if 'Security ID' in s]
             if (len(item_id) >= 1):
                 securityid = item_id[0].split(":")[1]
 
             if (eventid==SignatureDetector.EVENT_SHARE):
-                item_sharedname = [s for s in item if '共有名' in s]
+                item_sharedname = [s for s in item if 'Share Name' in s]
                 sharedname = item_sharedname[0].split(":")[1]
 
         else:
@@ -126,7 +126,6 @@ def preds(row):
         # To specify parameter as Object
         inputLog = InputLog.InputLog(datetime, eventid, accountname, clientaddr, servicename, processname, objectname, sharedname,securityid)
         # update start by gam
-        #print(datetime+eventid+accountname+clientaddr+servicename+processname+objectname+sharedname+securityid)
         result = SignatureDetector.signature_detect(inputLog)
 
         # update end
@@ -154,11 +153,12 @@ def preds(row):
 
     with open(RESULT_FILE, 'a') as f:
         writer = csv.writer(f)
-        writer.writerow([datetime, eventid, accountname, clientaddr, servicename, processname, objectname, sharedname,result])
+        writer.writerow([datetime, eventid, accountname, clientaddr, servicename, processname, objectname, sharedname,result,file])
 
     return result
 
 def read_csv(inputdir):
+
     files = glob.glob(inputdir+"/*.csv")
     for file in files:
         #print(file)
@@ -167,5 +167,5 @@ def read_csv(inputdir):
             header = next(reader)
             for row in reader:
                 if row:
-                    preds(row)
+                    preds(row,file)
 
