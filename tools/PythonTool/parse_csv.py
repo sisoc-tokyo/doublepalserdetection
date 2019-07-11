@@ -10,21 +10,8 @@ import pandas as pd
 
 RESULT_FILE='result.csv'
 DOMAIN_NAME='example2.local'
-MODE_ML='ml'
-MODE_WHITE='whitelist'
 TARGET_EVT=[SignatureDetector.EVENT_TGT,SignatureDetector.EVENT_ST,SignatureDetector.EVENT_PRIV,SignatureDetector.EVENT_PROCESS,
             SignatureDetector.EVENT_PRIV_SERVICE,SignatureDetector.EVENT_PRIV_OPE,SignatureDetector.EVENT_SHARE,SignatureDetector.EVENT_LOGIN,SignatureDetector.EVENT_NTLM]
-
-# clf_4674 = joblib.load('ocsvm_gt_4674.pkl')
-# base_dummies_4674 = pd.read_csv('data_dummies_4674.csv')
-# clf_4688 = joblib.load('ocsvm_gt_4688.pkl')
-# base_dummies_4688 = pd.read_csv('data_dummies_4688.csv')
-
-# SignatureDetector.df_admin = pd.read_csv("./admin.csv")
-# SignatureDetector.df_cmd = pd.read_csv("./command.csv")
-# SignatureDetector.df_cmd_white = pd.read_csv("./whitelist.csv")
-
-mode=MODE_WHITE
 
 LOGFILE="err.log"
 file=None
@@ -132,20 +119,9 @@ def preds(row,file):
         clientaddr = inputLog.get_clientaddr()
         processname=inputLog.get_processname()
 
-        if (result == SignatureDetector.RESULT_CMD or result == SignatureDetector.RESULT_MAL_CMD):
-            if(mode==MODE_ML):
-                #result = ML.preds(eventid, accountname, processname, objectname, base_dummies_4674, clf_4674, base_dummies_4688, clf_4688)
-                print()
-            else:
-                processname = processname.strip().strip("'")
-                result = SignatureDetector.check_cmd_whitelist(processname)
-
-        if (result != SignatureDetector.RESULT_NORMAL
-                #and result != ML.RESULT_WARN
-        ):
+        if (result != SignatureDetector.RESULT_NORMAL):
             print(result)
             print(msg)
-            #send_alert.Send_alert(result, datetime, eventid, accountname, clientaddr, servicename, processname, objectname, sharedname)
 
     except:
         file = open(logfile, 'a')
@@ -161,7 +137,6 @@ def read_csv(inputdir):
 
     files = glob.glob(inputdir+"/*.csv")
     for file in files:
-        #print(file)
         with open(file, 'r') as f:
             reader = csv.reader(f)
             header = next(reader)

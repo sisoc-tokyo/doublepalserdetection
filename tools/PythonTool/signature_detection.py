@@ -74,96 +74,17 @@ class SignatureDetector:
         """
         result=SignatureDetector.RESULT_NORMAL
 
-
-        # if (inputLog.get_eventid()==SignatureDetector.EVENT_ST) :
-        #     result=SignatureDetector.hasNoTGT(inputLog)
-        #
-        # elif (inputLog.get_eventid() == SignatureDetector.EVENT_PRIV):
-        #     result =SignatureDetector.isNotAdmin(inputLog)
-        #
-        # elif (inputLog.get_eventid() == SignatureDetector.EVENT_PRIV_OPE
-        #         or inputLog.get_eventid() == SignatureDetector.EVENT_PRIV_SERVICE):
-        #     result = SignatureDetector.isSuspiciousProcess(inputLog)
-
         if (inputLog.get_eventid() == SignatureDetector.EVENT_PROCESS):
             result = SignatureDetector.isEternalBlue(inputLog)
 
         elif (inputLog.get_eventid() == SignatureDetector.EVENT_SHARE):
             result = SignatureDetector.isEternalBlue(inputLog)
 
-        # elif (inputLog.get_eventid() == SignatureDetector.EVENT_LOGIN):
-        #     result = SignatureDetector.isEternalWin8(inputLog)
-
-
-        # elif (inputLog.get_eventid() == SignatureDetector.EVENT_NTLM):
-        #     result = SignatureDetector.isEternalWin8(inputLog)
-
         series = pd.Series([inputLog.get_datetime(),inputLog.get_eventid(),inputLog.get_accountname(),inputLog.get_clientaddr(),
                       inputLog.get_servicename(),inputLog.get_processname(),inputLog.get_objectname(), inputLog.get_sharedname(), inputLog.get_securityid()], index=SignatureDetector.df.columns)
         SignatureDetector.df=SignatureDetector.df.append(series, ignore_index = True)
 
         return result
-
-    @staticmethod
-    def hasNoTGT(inputLog):
-        time.sleep(1)
-        SignatureDetector.df["eventid"]=SignatureDetector.df["eventid"].astype(str)
-        logs=SignatureDetector.df[(SignatureDetector.df.accountname == inputLog.get_accountname())
-                                  &(SignatureDetector.df.clientaddr==inputLog.get_clientaddr())
-                                  & (SignatureDetector.df.eventid == SignatureDetector.EVENT_TGT)
-        ]
-        if len(logs)==0:
-            print("Signature D: " + SignatureDetector.WARN)
-            return SignatureDetector.WARN
-        else:
-            return SignatureDetector.RESULT_NORMAL
-
-    @staticmethod
-    def isNotAdmin(inputLog):
-        logs = SignatureDetector.df_admin[(SignatureDetector.df_admin.accountname == inputLog.get_accountname())]
-        if len(logs) == 0:
-            print("Signature A: " + SignatureDetector.RESULT_PRIV)
-            return SignatureDetector.RESULT_PRIV
-        else:
-            return SignatureDetector.RESULT_NORMAL
-
-    @staticmethod
-    def isSuspiciousProcess(inputLog):
-
-        logs = SignatureDetector.df[(SignatureDetector.df.accountname == inputLog.get_accountname())
-                                    & (SignatureDetector.df.eventid == SignatureDetector.EVENT_ST)
-                                    ]
-        latestlog=logs.tail(1)
-        if(len(latestlog)>0):
-            clientaddr=latestlog.clientaddr.values[0]
-            inputLog.set_clientaddr(clientaddr)
-
-        #print(inputLog.get_clientaddr()+","+inputLog.get_accountname())
-
-        if (inputLog.get_processname().find(SignatureDetector.SYSTEM_DIR)==-1 and inputLog.get_processname().find(SignatureDetector.SYSTEM_DIR2)==-1):
-            #print("Signature B: "+SignatureDetector.RESULT_MAL_CMD)
-            return SignatureDetector.RESULT_MAL_CMD
-        cmds=inputLog.get_processname().split("\\")
-        cmd=cmds[len(cmds)-1]
-        logs = SignatureDetector.df_cmd[SignatureDetector.df_cmd.processname.str.contains(cmd)]
-        if len(logs)>0:
-            #print("Signature B: " + SignatureDetector.RESULT_CMD)
-            return SignatureDetector.RESULT_CMD
-
-        if (inputLog.get_objectname().find(SignatureDetector.PSEXESVC)>=0):
-            #print("Signature B: " + SignatureDetector.RESULT_CMD)
-            return SignatureDetector.RESULT_CMD
-
-        return SignatureDetector.RESULT_NORMAL
-
-    @staticmethod
-    def check_cmd_whitelist(processname):
-        logs = SignatureDetector.df_cmd_white[(SignatureDetector.df_cmd_white.processname == processname)]
-        if len(logs) == 0:
-            print("Signature B: " + SignatureDetector.RESULT_CMD)
-            return SignatureDetector.RESULT_CMD
-        else:
-            return SignatureDetector.RESULT_NORMAL
 
     @staticmethod
     def isAdminshare(inputLog):
