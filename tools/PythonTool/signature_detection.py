@@ -88,8 +88,7 @@ class SignatureDetector:
 
     @staticmethod
     def isAdminshare(inputLog):
-        if inputLog.get_sharedname().find(SignatureDetector.ADMINSHARE)>=0:
-            print("Signature C: " + SignatureDetector.RESULT_ADMINSHARE)
+        if inputLog.get_sharedname().find(SignatureDetector.ADMINSHARE)>=0 or inputLog.get_sharedname().find(SignatureDetector.ADMINSHARE2)>=0:
             return SignatureDetector.RESULT_ADMINSHARE
 
         return SignatureDetector.RESULT_NORMAL
@@ -217,15 +216,17 @@ class SignatureDetector:
         logs=None
 
         # security id is system and (process name is cmd.exe or rundll32.exe)
-        if ((inputLog.get_securityid()==SignatureDetector.SYSTEM) and
-            (inputLog.get_processname().endswith(SignatureDetector.CMD) or inputLog.get_processname().endswith(SignatureDetector.RUNDLL))):
+        if (inputLog.get_securityid()==SignatureDetector.SYSTEM and
+            (inputLog.get_processname().endswith(SignatureDetector.CMD)
+             or inputLog.get_processname().endswith(SignatureDetector.RUNDLL))
+        ):
             # Check whether ANONYMOUS IPC access is used within 2 seconds
             logs = SignatureDetector.df[((SignatureDetector.df.securityid == SignatureDetector.ANONYMOUS) | (SignatureDetector.df.accountname == SignatureDetector.ANONYMOUS))
                         & (SignatureDetector.df.sharename.str.endswith(SignatureDetector.IPC))]
 
         # security id is ANONYMOUS and share name is IPC security id is system and (process name is cmd.exe or rundll32) is recorded  within 2 seconds
         if ((inputLog.get_securityid() == SignatureDetector.ANONYMOUS or inputLog.get_accountname()== SignatureDetector.ANONYMOUS)
-            and (inputLog.get_sharedname().endswith(SignatureDetector.IPC))):
+            and inputLog.get_sharedname().endswith(SignatureDetector.IPC)):
             # Check whether
             logs = SignatureDetector.df[(SignatureDetector.df.securityid == SignatureDetector.SYSTEM)
                                         & (

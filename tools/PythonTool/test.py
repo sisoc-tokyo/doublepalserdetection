@@ -1,4 +1,4 @@
-#import parse_csv_jp
+import parse_csv_jp
 import parse_csv
 import os,sys,csv
 
@@ -17,7 +17,7 @@ try:
         writer = csv.writer(f)
         writer.writerow(
             ["datetime", "eventid", "accountname", "clientaddr", "servicename", "processname", "objectname",
-             "sharedname", "result","file"])
+             "sharedname", "securityid","result","file"])
 
     #parse_csv_jp.read_csv(sys.argv[1])
     parse_csv.read_csv(sys.argv[1])
