@@ -14,7 +14,7 @@ TARGET_EVT=[SignatureDetector.EVENT_TGT,SignatureDetector.EVENT_ST,SignatureDete
 logfile="err.log"
 file=None
 
-def preds(row):
+def preds_jp(row):
     global logfile
     try:
         datetime = row[1]
@@ -141,5 +141,5 @@ def read_csv(inputdir):
             header = next(reader)
             for row in reader:
                 if row:
-                    preds(row)
+                    preds_jp(row,file)
 

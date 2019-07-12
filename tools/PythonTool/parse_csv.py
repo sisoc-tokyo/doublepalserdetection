@@ -3,7 +3,7 @@ import os
 import sys
 import glob
 from signature_detection import SignatureDetector
-import InputLog
+import InputLog,parse_csv_jp
 #from machine_learning import ML
 #from sklearn.externals import joblib
 import pandas as pd
@@ -135,7 +135,13 @@ def read_csv(inputdir):
         with open(file, 'r') as f:
             reader = csv.reader(f)
             header = next(reader)
-            for row in reader:
-                if row:
-                    preds(row,file)
+            if(header.contains('Keywords')):
+               for row in reader:
+                    if row:
+                        preds(row,file)
+            else:
+                for row in reader:
+                    if row:
+                        parse_csv_jp.preds_jp(row).preds(row, file)
+
 
