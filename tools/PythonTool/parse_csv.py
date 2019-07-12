@@ -135,7 +135,8 @@ def read_csv(inputdir):
         with open(file, 'r') as f:
             reader = csv.reader(f)
             header = next(reader)
-            if(header.contains('Keywords')):
+            print(header[0])
+            if(str(header[0]).endswith('Keywords')):
                for row in reader:
                     if row:
                         preds(row,file)
