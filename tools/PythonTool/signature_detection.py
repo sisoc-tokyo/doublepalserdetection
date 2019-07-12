@@ -235,7 +235,7 @@ class SignatureDetector:
                                              ))
                                         )]
         # Check whether admin share is used
-        if(inputLog.get_eventid()==SignatureDetector.EVENT_SHARE and SignatureDetector.isAdminshare(inputLog)):
+        if(inputLog.get_eventid()==SignatureDetector.EVENT_SHARE and SignatureDetector.isAdminshare(inputLog)==SignatureDetector.RESULT_ADMINSHARE):
             logs = SignatureDetector.df[(SignatureDetector.df.securityid == SignatureDetector.SYSTEM)
                                         & (
                                             ((SignatureDetector.df.processname.str.endswith(SignatureDetector.CMD) |
