@@ -249,7 +249,7 @@ class SignatureDetector:
             last_date = dateutil.parser.parse(logs.tail(1).datetime.str.cat())
             last_date = timezone('UTC').localize(last_date)
             diff = (last_date -now ).total_seconds()
-            if (diff <= 60):
+            if (diff <= 10):
                 print("Signature E(EternalBlue): " + SignatureDetector.RESULT_ROMANCE)
                 return SignatureDetector.RESULT_ROMANCE
 
