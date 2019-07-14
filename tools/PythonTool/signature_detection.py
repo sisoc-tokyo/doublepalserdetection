@@ -79,6 +79,17 @@ class SignatureDetector:
 
         elif (inputLog.get_eventid() == SignatureDetector.EVENT_SHARE):
             result = SignatureDetector.isEternalBlue(inputLog)
+            if(result==SignatureDetector.RESULT_NORMAL):
+                result=SignatureDetector.isEternalRomace(inputLog)
+            if (result == SignatureDetector.RESULT_NORMAL):
+                result = SignatureDetector.isEternalWin8(inputLog)
+
+        elif (inputLog.get_eventid() == SignatureDetector.EVENT_LOGIN):
+            result = SignatureDetector.isEternalWin8(inputLog)
+
+
+        elif (inputLog.get_eventid() == SignatureDetector.EVENT_NTLM):
+            result = SignatureDetector.isEternalWin8(inputLog)
 
         series = pd.Series([inputLog.get_datetime(),inputLog.get_eventid(),inputLog.get_accountname(),inputLog.get_clientaddr(),
                       inputLog.get_servicename(),inputLog.get_processname(),inputLog.get_objectname(), inputLog.get_sharedname(), inputLog.get_securityid()], index=SignatureDetector.df.columns)
@@ -117,7 +128,7 @@ class SignatureDetector:
             now = timezone('UTC').localize(now)
             last_date=dateutil.parser.parse(logs.tail(1).datetime.str.cat())
             last_date = timezone('UTC').localize(last_date)
-            diff=(now-last_date).total_seconds()
+            diff=(last_date - now).total_seconds()
             if(diff<2):
                 print("Signature E(EternalRomace): " + SignatureDetector.RESULT_ROMANCE)
                 return SignatureDetector.RESULT_ROMANCE
@@ -145,11 +156,11 @@ class SignatureDetector:
                 now = timezone('UTC').localize(now)
                 last_date = dateutil.parser.parse(logs_login.tail(1).datetime.str.cat())
                 last_date = timezone('UTC').localize(last_date)
-                diff_login = (now - last_date).total_seconds()
+                diff_login = (last_date - now).total_seconds()
 
                 last_date = dateutil.parser.parse(logs_ntlm.tail(1).datetime.str.cat())
                 last_date = timezone('UTC').localize(last_date)
-                diff_ntlm = (now - last_date).total_seconds()
+                diff_ntlm = (last_date - now).total_seconds()
 
                 if (diff_login < 2 and diff_ntlm < 2):
                     SignatureDetector.cnt=SignatureDetector.cnt+1
@@ -170,11 +181,11 @@ class SignatureDetector:
                 now = timezone('UTC').localize(now)
                 last_date = dateutil.parser.parse(logs_share.tail(1).datetime.str.cat())
                 last_date = timezone('UTC').localize(last_date)
-                diff_share = (now - last_date).total_seconds()
+                diff_share = (last_date - now).total_seconds()
 
                 last_date = dateutil.parser.parse(logs_ntlm.tail(1).datetime.str.cat())
                 last_date = timezone('UTC').localize(last_date)
-                diff_ntlm = (now - last_date).total_seconds()
+                diff_ntlm = (last_date - now).total_seconds()
 
                 if (diff_share < 2 and diff_ntlm < 2):
                     SignatureDetector.cnt=SignatureDetector.cnt+1
@@ -195,11 +206,11 @@ class SignatureDetector:
                 now = timezone('UTC').localize(now)
                 last_date = dateutil.parser.parse(logs_share.tail(1).datetime.str.cat())
                 last_date = timezone('UTC').localize(last_date)
-                diff_share = (now - last_date).total_seconds()
+                diff_share = (last_date - now).total_seconds()
 
                 last_date = dateutil.parser.parse(logs_login.tail(1).datetime.str.cat())
                 last_date = timezone('UTC').localize(last_date)
-                diff_login = (now - last_date).total_seconds()
+                diff_login = (last_date - now).total_seconds()
 
                 if (diff_share < 2 and diff_login < 2):
                     SignatureDetector.cnt = SignatureDetector.cnt + 1

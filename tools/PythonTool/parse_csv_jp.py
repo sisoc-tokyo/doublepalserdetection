@@ -129,7 +129,9 @@ def preds_jp(row):
 
     with open(RESULT_FILE, 'a') as f:
         writer = csv.writer(f)
-        writer.writerow([datetime, eventid, accountname, clientaddr, servicename, processname, objectname, sharedname,result])
+        writer.writerow(
+            [datetime, eventid, accountname, clientaddr, servicename, processname, objectname, sharedname, securityid,
+             result, file])
 
     return result
 
