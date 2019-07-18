@@ -17,6 +17,8 @@ LOGFILE="err.log"
 file=None
 
 def preds(row,file):
+    if len(row)<=5:
+        return;
     global LOGFILE
     datetime = row[1]
     eventid = row[3]
@@ -143,6 +145,6 @@ def read_csv(inputdir):
             else:
                 for row in reader:
                     if row:
-                        parse_csv_jp.preds_jp(row).preds(row, file)
+                        parse_csv_jp.preds_jp(row, file)
 
 
