@@ -138,7 +138,7 @@ def read_csv(inputdir):
             reader = csv.reader(f)
             header = next(reader)
             print(header[0])
-            if(str(header[0]).endswith('Keywords')):
+            if str(header[0]).endswith('Keywords') or str(header[0]).endswith('Level'):
                for row in reader:
                     if row:
                         preds(row,file)

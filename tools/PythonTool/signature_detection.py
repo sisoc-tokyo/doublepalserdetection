@@ -175,7 +175,9 @@ class SignatureDetector:
             logs = SignatureDetector.df[SignatureDetector.df.accountname == inputLog.get_accountname()]
             if ((logs is not None) and len(logs) > 0):
                 logs_share = logs[(SignatureDetector.df.eventid == SignatureDetector.EVENT_SHARE) &
-                                  (SignatureDetector.df.clientaddr == inputLog.get_clientaddr())]
+                                  (SignatureDetector.df.clientaddr == inputLog.get_clientaddr()) &
+                                  (SignatureDetector.df.sharename.str.endswith(SignatureDetector.IPC))
+                                  ]
                 logs_ntlm = logs[(SignatureDetector.df.eventid == SignatureDetector.EVENT_NTLM)]
 
             if ((logs_share is not None) and len(logs_share) > 0) and ((logs_ntlm is not None) and (len(logs_ntlm) > 0)):
@@ -200,7 +202,9 @@ class SignatureDetector:
             # Check whether 5140 and 4624 events are recorded from the same account within 2 seconds
             logs = SignatureDetector.df[SignatureDetector.df.accountname == inputLog.get_accountname()]
             if ((logs is not None) and len(logs) > 0):
-                logs_share = logs[(SignatureDetector.df.eventid == SignatureDetector.EVENT_SHARE)]
+                logs_share = logs[(SignatureDetector.df.eventid == SignatureDetector.EVENT_SHARE) &
+                (SignatureDetector.df.sharename.str.endswith(SignatureDetector.IPC))
+                ]
                 logs_login = logs[(SignatureDetector.df.eventid == SignatureDetector.EVENT_LOGIN)]
 
             if ((logs_share is not None) and len(logs_share) > 0) and ((logs_login is not None) and (len(logs_login) > 0)):
