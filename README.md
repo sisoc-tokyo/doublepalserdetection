@@ -7,14 +7,14 @@ The tool is implemented by Pyrhon 3.
 1. Export Event Log (Security) as CSV file using the standard function of Event viewer<br/>
     Right click Security Logs-> "Save All Event As.." -> Select CSV file type
 2. Execute a tool as follows<br/>
-$ cd tools/PythonTool/
-$ python test.py [inputdirname]
+$ cd tools/PythonTool/<br/>
+$ python test.py [inputdirname]<br/>
   inputdirname: full path of the directory in which Event Logs are put<br/>
   
 ####	Input of the tools: Event logs of the target computer. 
-* 4624: 
+* 4624: An account was successfully logged on
 * 4688: A new process was created
-* 4776: 
+* 4776: The domain controller attempted to validate the credentials for an account
 * 5140: A network share object was accessed
 
 ###	Output (result) of the tool
