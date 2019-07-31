@@ -1,247 +1,4 @@
-新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignment新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignment新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignment新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignment新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignment新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignment新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignment新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignment新しいプロセスが作成されました。
-
-サブジェクト:
-	セキュリティ ID:		SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:		EXAMPLE
-	ログオン ID:		0x3e7
-
-プロセス情報:
-	新しいプロセス ID:		0xca8
-	新しいプロセス名:		C:\Windows\System32\AtBroker.exe
-	トークン昇格の種類:	TokenElevationTypeLimited (3)
-	クリエーター プロセス ID:	0xee4
-
-トークン昇格の種類は、ユーザー アカウント制御ポリシーに従って新しいプロセスに割り当てられたトークンの種類を示します。
-
-種類 1 は、特権が削除されていない、またはグループが無効にされていない、フル トークンです。フル トークンは、ユーザー アカウント制御が無効の場合、またはユーザーが組み込みの管理者アカウントまたはサービス アカウントである場合にのみ使用されます。
-
-種類 2 は、特権が削除されていない、またはグループが無効にされていない、昇格されたトークンです。昇格されたトークンは、ユーザー アカウント制御が有効であり、ユーザーが管理者として Run を使用してプログラムを起動することを選択する場合に使用されます。昇格されたトークンは、アプリケーションが常に管理者特権を要求するか、または常に最高の特権を要求するように構成され、ユーザーが管理者グループのメンバーである場合にも使用されます。
-
-種類 3 は、管理者特権が削除され、管理グループが無効にされた、制限されたトークンです。制限されたトークンは、ユーザー アカウント制御が有効で、アプリケーションが管理者特権を要求せず、ユーザーが管理者として Run を使用してプログラムを起動しない場合に使用されます。local variable 'result' referenced before assignmentネットワーク共有オブジェクトにアクセスしました。
-	
-サブジェクト:
-	セキュリティ ID:	EXAMPLE\SATOPC$
-	アカウント名:		SATOPC$
-	アカウント ドメイン:	EXAMPLE
-	ログオン ID:		0x73f8adf
-
-ネットワーク情報:	
-	オブジェクトの種類:	File
-	送信元アドレス:		10.0.9.14
-	ソース ポート:		24892
-	
-共有情報:
-	共有名:			\\*\IPC$
-	共有パス:		
-
-アクセス要求情報:
-	アクセス マスク:	0x1
-	アクセス:		ReadData (または ListDirectory)
-				
-local variable 'result' referenced before assignmentネットワーク共有オブジェクトにアクセスしました。
-	
-サブジェクト:
-	セキュリティ ID:	SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:	EXAMPLE
-	ログオン ID:		0x73fab6c
-
-ネットワーク情報:	
-	オブジェクトの種類:	File
-	送信元アドレス:		fe80::1195:52b:351c:319
-	ソース ポート:		49955
-	
-共有情報:
-	共有名:			\\*\SYSVOL
-	共有パス:		\??\C:\Windows\SYSVOL\sysvol
-
-アクセス要求情報:
-	アクセス マスク:	0x1
-	アクセス:		ReadData (または ListDirectory)
-				
-local variable 'result' referenced before assignmentネットワーク共有オブジェクトにアクセスしました。
-	
-サブジェクト:
-	セキュリティ ID:	SYSTEM
-	アカウント名:		DC$
-	アカウント ドメイン:	EXAMPLE
-	ログオン ID:		0x5115332
-
-ネットワーク情報:	
-	オブジェクトの種類:	File
-	送信元アドレス:		fe80::1195:52b:351c:319
-	ソース ポート:		63197
-	
-共有情報:
-	共有名:			\\*\SYSVOL
-	共有パス:		\??\C:\Windows\SYSVOL\sysvol
-
-アクセス要求情報:
-	アクセス マスク:	0x1
-	アクセス:		ReadData (または ListDirectory)
-				
-local variable 'result' referenced before assignmentAn account was successfully logged on.
+'str' object has no attribute 'preds'An account was successfully logged on.
 
 Subject:
 	Security ID:		NULL SID
@@ -249,14 +6,23 @@ Subject:
 	Account Domain:		-
 	Logon ID:		0x0
 
-Logon Type:			3
+Logon Information:
+	Logon Type:		3
+	Restricted Admin Mode:	-
+	Virtual Account:		No
+	Elevated Token:		Yes
+
+Impersonation Level:		Impersonation
 
 New Logon:
 	Security ID:		SYSTEM
-	Account Name:		DC$
-	Account Domain:		EXAMPLE
-	Logon ID:		0xd6ba8
-	Logon GUID:		{DEF32712-786A-E8EF-2E47-B73087BFF4C7}
+	Account Name:		DC2016$
+	Account Domain:		EXAMPLE2.LOCAL
+	Logon ID:		0x9042167
+	Linked Logon ID:		0x0
+	Network Account Name:	-
+	Network Account Domain:	-
+	Logon GUID:		{1EE37B4E-15FC-A6BC-B6AB-CCD2BB6B4121}
 
 Process Information:
 	Process ID:		0x0
@@ -264,8 +30,8 @@ Process Information:
 
 Network Information:
 	Workstation Name:	
-	Source Network Address:	fe80::65ba:8fb1:c1b1:c2e4
-	Source Port:		49291
+	Source Network Address:	fe80::dc78:c1f4:776:9808
+	Source Port:		63733
 
 Detailed Authentication Information:
 	Logon Process:		Kerberos
@@ -283,6 +49,8 @@ The logon type field indicates the kind of logon that occurred. The most common 
 The New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.
 
 The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.
+
+The impersonation level field indicates the extent to which a process in the logon session can impersonate.
 
 The authentication information fields provide detailed information about this specific logon request.
 	- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.
@@ -296,14 +64,23 @@ Subject:
 	Account Domain:		-
 	Logon ID:		0x0
 
-Logon Type:			3
+Logon Information:
+	Logon Type:		3
+	Restricted Admin Mode:	-
+	Virtual Account:		No
+	Elevated Token:		Yes
+
+Impersonation Level:		Impersonation
 
 New Logon:
 	Security ID:		SYSTEM
-	Account Name:		DC$
-	Account Domain:		EXAMPLE
-	Logon ID:		0xd6ba8
-	Logon GUID:		{DEF32712-786A-E8EF-2E47-B73087BFF4C7}
+	Account Name:		DC2016$
+	Account Domain:		EXAMPLE2.LOCAL
+	Logon ID:		0x9042167
+	Linked Logon ID:		0x0
+	Network Account Name:	-
+	Network Account Domain:	-
+	Logon GUID:		{1EE37B4E-15FC-A6BC-B6AB-CCD2BB6B4121}
 
 Process Information:
 	Process ID:		0x0
@@ -311,8 +88,8 @@ Process Information:
 
 Network Information:
 	Workstation Name:	
-	Source Network Address:	fe80::65ba:8fb1:c1b1:c2e4
-	Source Port:		49291
+	Source Network Address:	fe80::dc78:c1f4:776:9808
+	Source Port:		63733
 
 Detailed Authentication Information:
 	Logon Process:		Kerberos
@@ -331,102 +108,10 @@ The New Logon fields indicate the account for whom the new logon was created, i.
 
 The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.
 
-The authentication information fields provide detailed information about this specific logon request.
-	- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.
-	- Transited services indicate which intermediate services have participated in this logon request.
-	- Package name indicates which sub-protocol was used among the NTLM protocols.
-	- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.local variable 'accountname' referenced before assignmentAn account was successfully logged on.
-
-Subject:
-	Security ID:		NULL SID
-	Account Name:		-
-	Account Domain:		-
-	Logon ID:		0x0
-
-Logon Type:			3
-
-New Logon:
-	Security ID:		SYSTEM
-	Account Name:		DC$
-	Account Domain:		EXAMPLE
-	Logon ID:		0xd6ba8
-	Logon GUID:		{DEF32712-786A-E8EF-2E47-B73087BFF4C7}
-
-Process Information:
-	Process ID:		0x0
-	Process Name:		-
-
-Network Information:
-	Workstation Name:	
-	Source Network Address:	fe80::65ba:8fb1:c1b1:c2e4
-	Source Port:		49291
-
-Detailed Authentication Information:
-	Logon Process:		Kerberos
-	Authentication Package:	Kerberos
-	Transited Services:	-
-	Package Name (NTLM only):	-
-	Key Length:		0
-
-This event is generated when a logon session is created. It is generated on the computer that was accessed.
-
-The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
-
-The logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).
-
-The New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.
-
-The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.
+The impersonation level field indicates the extent to which a process in the logon session can impersonate.
 
 The authentication information fields provide detailed information about this specific logon request.
 	- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.
 	- Transited services indicate which intermediate services have participated in this logon request.
 	- Package name indicates which sub-protocol was used among the NTLM protocols.
-	- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.local variable 'accountname' referenced before assignmentname 'logfile' is not definedname 'logfile' is not definedname 'logfile' is not definedname 'logfile' is not definedname 'logfile' is not definedAn account was successfully logged on.
-
-Subject:
-	Security ID:		NULL SID
-	Account Name:		-
-	Account Domain:		-
-	Logon ID:		0x0
-
-Logon Type:			3
-
-New Logon:
-	Security ID:		SYSTEM
-	Account Name:		DC$
-	Account Domain:		EXAMPLE
-	Logon ID:		0x20e3e9
-	Logon GUID:		{56D8AA96-18A1-956C-CB26-3055B83DA9B2}
-
-Process Information:
-	Process ID:		0x0
-	Process Name:		-
-
-Network Information:
-	Workstation Name:	
-	Source Network Address:	::1
-	Source Port:		60177
-
-Detailed Authentication Information:
-	Logon Process:		Kerberos
-	Authentication Package:	Kerberos
-	Transited Services:	-
-	Package Name (NTLM only):	-
-	Key Length:		0
-
-This event is generated when a logon session is created. It is generated on the computer that was accessed.
-
-The subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.
-
-The logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).
-
-The New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.
-
-The network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.
-
-The authentication information fields provide detailed information about this specific logon request.
-	- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.
-	- Transited services indicate which intermediate services have participated in this logon request.
-	- Package name indicates which sub-protocol was used among the NTLM protocols.
-	- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.local variable 'accountname' referenced before assignmentname 'logfile' is not definedname 'logfile' is not definedname 'logfile' is not definedname 'logfile' is not defined
+	- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.local variable 'accountname' referenced before assignmentlist index out of range
